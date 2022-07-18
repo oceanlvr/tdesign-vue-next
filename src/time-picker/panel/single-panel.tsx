@@ -103,9 +103,9 @@ export default defineComponent({
       const colIdx = timeArr.indexOf(col);
       if (colIdx !== -1) {
         const params: [number, number, number] = [
-          dayjsValue.value.hour(),
-          dayjsValue.value.minute(),
-          dayjsValue.value.second(),
+          dayjsValue.value.hour() as number,
+          dayjsValue.value.minute() as number,
+          dayjsValue.value.second() as number,
         ];
         params[colIdx] = Number(el);
         return !props.disableTime?.(...params, { partial: position.value || 'start' })?.[col]?.includes(Number(el));
